@@ -1,0 +1,35 @@
+{%- extends 'full.tpl'%}
+
+{%- block input_group %}
+<div class="input_group">
+    <div class="input_area" style="display: none;">
+        {{ cell.source | highlight_code(filter='highlight_code', language=language) }}
+    </div>
+    <div class="input_prompt">{{ cell.prompt_number|prompt_number_format }}</div>
+    <div class="input_toggle">
+        <a href="javascript:code_toggle_{{ nb}}()" id="toggleButton{{ nb}}" class="ui-button ui-widget ui-corner-all ui-state-default ui-button-text-only" role="button" aria-disabled="false">
+            <span class="ui-button-text">{% trans toggle_code %}toggle code{% endtrans %}</span>
+        </a>
+    </div>
+</div>
+{%- endblock input_group %}
+
+{%- block script %}
+<script type="text/javascript">
+    function code_toggle_{{ nb }}() {
+        var input_area = document.querySelector('#notebook-container').querySelectorAll('.input_area')[{{ nb }}];
+        if (input_area.style.display === 'none' || input_area.style.display === '') {
+            input_area.style.display = 'block';
+        } else {
+            input_area.style.display = 'none';
+        }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        var cells = document.querySelectorAll('.input_area');
+        for (var i = 0; i < cells.length; i++) {
+            cells[i].style.display = 'none';
+        }
+    });
+</script>
+{%- endblock script %}
+
