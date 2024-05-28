@@ -2,4 +2,4 @@ proyecto_mineria/archive.zip
 proyecto_mineria/venv/
 proyecto_mineria/archive/UserAnimeList.csv
 proyecto_mineria/archive/animelists_filtered.csv
-proyecto_mineria/archive/animelists_cleaned.csv
+proyecto_mineria/datasets/animelists_cleaned.csv
