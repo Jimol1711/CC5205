@@ -1,4 +1,4 @@
-# Repository for [Course Name]
+# Repository for Data Mining
 
 Assignments and tutorials for the Data Mining (CC5205) course at the FCFM. It is organized into three folders and includes a `.gitignore` file. Assignments were done in jupyter notebook.
 
